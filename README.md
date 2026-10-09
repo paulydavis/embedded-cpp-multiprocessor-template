@@ -35,3 +35,7 @@ under `platforms/` and must not fork core behavior.
 
 See `CLAUDE.md`, `docs/interfaces/ipc-freshness.md`, and
 `docs/testing/tdd-and-hostile-review.md` for the project workflow.
+
+Bitbucket Pipelines runs the host build, Unity tests, formatting check, and
+lint script from `bitbucket-pipelines.yml`. Hardware qualification remains a
+separate job with the required board and vendor SDK.

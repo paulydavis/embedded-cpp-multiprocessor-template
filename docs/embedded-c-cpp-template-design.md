@@ -83,9 +83,7 @@ and hardware-specific integration.
 │   ├── interfaces/
 │   ├── testing/
 │   └── decisions/
-└── .github/workflows/
-    ├── host.yml
-    └── review.yml
+└── bitbucket-pipelines.yml
 ```
 
 ## Build and test flow
@@ -98,8 +96,8 @@ cmake --build --preset host-debug
 ctest --preset host-debug --output-on-failure
 ```
 
-CI must build with warnings enabled, run Unity tests, run static analysis, and
-report coverage where the host toolchain supports it. Hardware builds are
+Bitbucket Pipelines must build with warnings enabled, run Unity tests, run
+static analysis, and report coverage where the host toolchain supports it. Hardware builds are
 separate jobs and must state the required SDK, compiler, board, and runner.
 
 Vendor projects consume the same `include/`, `src/`, and platform adapter code;

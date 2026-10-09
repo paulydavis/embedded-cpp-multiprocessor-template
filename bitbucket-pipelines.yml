@@ -1,0 +1,18 @@
+image: ubuntu:24.04
+
+pipelines:
+  default:
+    - step:
+        name: Host build, Unity tests, and lint
+        caches:
+          - cmake
+        script:
+          - apt-get update
+          - DEBIAN_FRONTEND=noninteractive apt-get install -y cmake ninja-build clang-format
+          - ./scripts/run_tests.sh
+          - ./scripts/format.sh --check
+          - ./scripts/lint.sh
+
+definitions:
+  caches:
+    cmake: build
