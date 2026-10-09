@@ -1,0 +1,8 @@
+if(NOT DEFINED IMX8_SDK_ROOT)
+    message(FATAL_ERROR "IMX8_SDK_ROOT must point to the vendor SDK/sysroot")
+endif()
+set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSROOT "${IMX8_SDK_ROOT}/sysroots/aarch64-poky-linux" CACHE PATH "i.MX8 sysroot")
+if(NOT EXISTS "${CMAKE_SYSROOT}")
+    message(FATAL_ERROR "i.MX8 sysroot not found: ${CMAKE_SYSROOT}")
+endif()

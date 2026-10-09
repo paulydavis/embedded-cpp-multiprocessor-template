@@ -1,0 +1,8 @@
+if(NOT DEFINED TI_DSP_CCS_ROOT)
+    message(FATAL_ERROR "TI_DSP_CCS_ROOT must point to the TI compiler installation")
+endif()
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_C_COMPILER "${TI_DSP_CCS_ROOT}/bin/cl6x" CACHE FILEPATH "TI DSP compiler")
+if(NOT EXISTS "${CMAKE_C_COMPILER}")
+    message(FATAL_ERROR "TI DSP compiler not found: ${CMAKE_C_COMPILER}")
+endif()

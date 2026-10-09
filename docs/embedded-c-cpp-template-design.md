@@ -15,8 +15,8 @@ and hardware-specific integration.
 
 ## Constraints and principles
 
-1. The repository is C/C++ first. Swift, Swift Package Manager, and macOS app
-   scaffolding are removed.
+1. The repository is C/C++ first; no desktop-language or desktop-app scaffold
+   is part of the template.
 2. CMake is the common entry point for host builds, static analysis, and tests.
    STM32CubeIDE/Make and TI Code Composer Studio projects remain optional
    wrappers under their respective platform directories.
@@ -151,4 +151,3 @@ waiting on real time by injecting a clock.
 - imposing one RTOS across all processors;
 - production bootloader, secure-boot, or field-update policy;
 - a finished application feature beyond a small buildable example and tests.
-

@@ -1,0 +1,8 @@
+if(NOT DEFINED STM32_TOOLCHAIN_ROOT)
+    message(FATAL_ERROR "STM32_TOOLCHAIN_ROOT must point to the ARM GCC toolchain")
+endif()
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_C_COMPILER "${STM32_TOOLCHAIN_ROOT}/bin/arm-none-eabi-gcc" CACHE FILEPATH "STM32 compiler")
+if(NOT EXISTS "${CMAKE_C_COMPILER}")
+    message(FATAL_ERROR "STM32 compiler not found: ${CMAKE_C_COMPILER}")
+endif()
